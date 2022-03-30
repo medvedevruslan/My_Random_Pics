@@ -30,7 +30,7 @@ fun loadPhoto(imageView: ImageView, photo: Photo) {
 
 
     val fadeAnimation = ViewPropertyTransition.Animator {
-        val fadeAnim = ObjectAnimator.ofFloat(it, "alpha, 0f, 1f")
+        val fadeAnim = ObjectAnimator.ofFloat(it, "alpha", 0f, 1f)
         fadeAnim.duration = 500
         fadeAnim.start()
     }
@@ -51,7 +51,7 @@ fun loadPhoto(imageView: ImageView, photo: Photo) {
 
 
 @ObsoleteCoroutinesApi
-@BindingAdapter("items", "viewModel")
+@BindingAdapter("items", "viewmodel")
 fun setItems(listView: RecyclerView, items: List<Photo>, viewModel: PhotoListViewModel) {
     (listView.adapter as PhotoAdapter).submitList(items)
     listView.onLoadMore { viewModel.requestItems() }

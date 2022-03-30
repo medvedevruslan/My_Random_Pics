@@ -11,7 +11,7 @@ import com.example.domain.usecase.base.Result
 import kotlinx.coroutines.ObsoleteCoroutinesApi
 import kotlinx.coroutines.channels.ReceiveChannel
 
-@OptIn(ObsoleteCoroutinesApi::class)
+@ObsoleteCoroutinesApi
 class PhotoListViewModel(private val getPhotosUseCase: GetPhotoUseCase) : BaseViewModel() {
 
 
